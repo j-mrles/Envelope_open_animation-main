@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="language-selector" id="languageSelector">
+        <div class="language-selector-content">
+            <div class="decorative-line-full lang-decorative-top"></div>
+            <h2 class="language-title">Select Language / Seleccionar Idioma</h2>
+            <div class="language-buttons">
+                <button class="lang-btn" data-lang="en">English</button>
+                <button class="lang-btn" data-lang="es">Español</button>
+            </div>
+            <div class="decorative-line-full lang-decorative-bottom"></div>
+        </div>
+    </div>
+    
+    <div class="evnelope-wrapper" id="mainContent" style="display: none;">
+        <div id="evnelope" class="close">
+        <div class="front flap"></div>
+        <div class="front pocket"></div>
+
+        <div class="letter">
+            <div class="invitation-content">
+                <div class="decorative-line top-line"></div>
+                <h1 class="couple-names">Javier & Rosita</h1>
+                <div class="invitation-text">
+                    <p class="invitation-line" data-en="Together with their families" data-es="Junto con sus familias"></p>
+                    <p class="invitation-line" data-en="request the pleasure of your company" data-es="tienen el honor de invitarle"></p>
+                    <p class="invitation-line" data-en="at their wedding celebration" data-es="a la celebración de su boda"></p>
+                </div>
+                <div class="wedding-date">
+                    <p class="date-line" data-en="Wednesday, April 24th, 2026" data-es="Miércoles, 24 de Abril, 2026"></p>
+                    <p class="time-line" data-en="Five o'clock in the afternoon" data-es="A las cinco de la tarde"></p>
+                </div>
+                <div class="wedding-location">
+                    <p class="venue-name" data-en="At the Pacheco's Residence" data-es="En la Residencia de los Pacheco"></p>
+                    <p class="venue-address">2300 Mebane Oaks Rd</p>
+                    <p class="venue-city">Mebane, NC</p>
+                </div>
+                <div class="decorative-line bottom-line"></div>
+            </div>
+        </div>
+
+        <div class="hearts">
+            <div class="heart a1"></div>
+            <div class="heart a2"></div>
+            <div class="heart a3"></div>
+            <div class="heart a4"></div>
+            <div class="heart a5"></div>
+            <div class="heart a6"></div>
+        </div>
+    </div>
+    </div>
+
+    
+    <div class="white-overlay" id="whiteOverlay">
+        <div class="full-invitation" id="fullInvitation">
+            <div class="invitation-paper">
+                <div class="invitation-header">
+                    <div class="decorative-line-full top-decorative"></div>
+                    <h1 class="full-couple-names">Javier Morales<br>&<br>Rosita Pacheco</h1>
+                    <div class="decorative-line-full bottom-decorative"></div>
+                </div>
+                
+                <div class="invitation-body">
+                    <p class="full-invitation-line" data-en="Together with their families" data-es="Junto con sus familias"></p>
+                    <p class="full-invitation-line" data-en="request the pleasure of your company" data-es="tienen el honor de invitarle"></p>
+                    <p class="full-invitation-line" data-en="at their wedding celebration" data-es="a la celebración de su boda"></p>
+                </div>
+                
+                <div class="full-wedding-date">
+                    <p class="full-date-line" data-en="Wednesday, April 24th, 2026" data-es="Miércoles, 24 de Abril, 2026"></p>
+                    <p class="full-time-line" data-en="Five o'clock in the afternoon" data-es="A las cinco de la tarde"></p>
+                </div>
+                
+                <div class="full-wedding-location">
+                    <p class="full-venue-name" data-en="At the Pacheco's Residence" data-es="En la Residencia de los Pacheco"></p>
+                    <p class="full-venue-address">2300 Mebane Oaks Rd</p>
+                    <p class="full-venue-city">Mebane, NC</p>
+                </div>
+                
+                <div class="wedding-schedule">
+                    <div class="decorative-line-full schedule-decorative"></div>
+                    <h2 class="schedule-title" data-en="What to Expect" data-es="Qué Esperar"></h2>
+                    <div class="schedule-item">
+                        <p class="schedule-time">5:00 PM</p>
+                        <p class="schedule-event" data-en="Introductions" data-es="Introducciones"></p>
+                    </div>
+                    <div class="schedule-item">
+                        <p class="schedule-time">5:30 PM</p>
+                        <p class="schedule-event" data-en="Family & friends gathering" data-es="Reunión de familia y amigos"></p>
+                    </div>
+                    <div class="schedule-item">
+                        <p class="schedule-time">6:30 PM</p>
+                        <p class="schedule-event" data-en="Formal dinner" data-es="Cena formal"></p>
+                    </div>
+                    <div class="schedule-item">
+                        <p class="schedule-time">8:00 PM</p>
+                        <p class="schedule-event" data-en="First dance" data-es="Primer baile"></p>
+                    </div>
+                    <div class="schedule-item">
+                        <p class="schedule-time">9:00 PM</p>
+                        <p class="schedule-event" data-en="Celebration continues" data-es="La celebración continúa"></p>
+                    </div>
+                </div>
+                
+                <div class="invitation-footer">
+                    <div class="decorative-line-full footer-decorative"></div>
+                    <p class="rsvp-line" data-en="Kindly reply by April 1st, 2026" data-es="Favor de confirmar antes del 1 de Abril, 2026"></p>
+                    <div class="invitation-buttons">
+                        <a href="#" class="invitation-btn registry-btn" id="registryBtn" target="_blank" data-en="View Registry" data-es="Ver Lista de Regalos"></a>
+                        <a href="#" class="invitation-btn rsvp-btn" id="rsvpBtn" target="_blank" data-en="RSVP & Add Plus One" data-es="Confirmar Asistencia y Acompañante"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="click-prompt" id="clickPrompt">
+        <p data-en="Click to open" data-es="Haz clic para abrir"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
