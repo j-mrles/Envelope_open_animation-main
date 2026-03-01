@@ -1,3 +1,4 @@
+/* Flowing cursive for the whole project */
 #evnelope{
     position: relative;
     width: 280px;
@@ -6,8 +7,15 @@
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
     margin: 0 auto;
-    background-color: #6b2c91;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    background-color: #e0dcd6;
+    background-image: 
+        linear-gradient(45deg, rgba(0,0,0,0.03) 25%, transparent 25%),
+        linear-gradient(-45deg, rgba(0,0,0,0.03) 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, rgba(0,0,0,0.03) 75%),
+        linear-gradient(-45deg, transparent 75%, rgba(0,0,0,0.03) 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
     transition: opacity 0.8s ease;
     cursor: pointer;
 }
@@ -21,16 +29,49 @@
     border-left: 140px solid transparent;
     border-right: 140px solid transparent;
     border-bottom: 82px solid transparent;
-    border-top: 98px solid #6b2c91;
+    border-top: 98px solid #d8d4ce;
     transform-origin: top;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.06));
 }
 .pocket{
-    border-left: 140px solid #8b4da8;
-    border-right: 140px solid #8b4da8;
-    border-bottom: 90px solid #7a3d96;
+    border-left: 140px solid #d0ccc6;
+    border-right: 140px solid #d0ccc6;
+    border-bottom: 90px solid #c8c4be;
     border-top: 90px solid transparent;
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
+}
+.wax-seal{
+    position: absolute;
+    top: 42px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 3px solid #1a1a1a;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+    z-index: 6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.wax-seal-initials{
+    font-family: 'Great Vibes', cursive;
+    font-size: 18px;
+    font-weight: 400;
+    color: #1a1a1a;
+    letter-spacing: 0;
+}
+.close .wax-seal{
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+.open .wax-seal,
+.letter-out .wax-seal{
+    opacity: 0;
+    pointer-events: none;
 }
 .letter{
     position: relative;
@@ -55,7 +96,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-family: 'Georgia', 'Times New Roman', serif;
+    font-family: 'Great Vibes', cursive;
     color: #2c2c2c;
 }
 .decorative-line{
@@ -76,7 +117,7 @@
     letter-spacing: 3px;
     margin: 12px 0;
     color: #1a1a1a;
-    font-family: 'Georgia', serif;
+    font-family: 'Great Vibes', cursive;
 }
 .invitation-text{
     margin: 15px 0;
@@ -165,45 +206,287 @@
     transform: translateY(0);
     pointer-events: auto;
 }
-.invitation-paper{
-    background-color: #fefefe;
-    padding: 80px 60px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.05);
-    border-radius: 2px;
-    position: relative;
-    font-family: 'Georgia', 'Times New Roman', serif;
-    color: #2c2c2c;
-    text-align: center;
-    line-height: 1.8;
-    min-height: auto;
-    width: 100%;
-    box-sizing: border-box;
+/* ========== INVITATION COLLAGE (reference style) ========== */
+:root{
+    --forest: #163d24;
+    --forest-light: #1e5631;
+    --cream: #f5f2ed;
+    --cream-dark: #ebe6df;
 }
-.invitation-paper::before{
+.invitation-collage{
+    position: relative;
+    width: 100%;
+    max-width: 540px;
+    min-height: 700px;
+    margin: 0 auto;
+    font-family: 'Great Vibes', cursive;
+}
+.invitation-collage .cutout{
+    position: absolute;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: #1a1a1a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.invitation-collage .cutout:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+/* Polaroids */
+.polaroid{
+    position: absolute;
+    background: #fff;
+    padding: 10px 10px 36px 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+    transform: rotate(-3deg);
+}
+.polaroid-photo{
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #e8e6e4 0%, #d4d0cc 100%);
+}
+.polaroid-wine{
+    background: linear-gradient(160deg, #e0ddd8 0%, #c9c5bf 100%);
+}
+.polaroid-1{ top: 20px; left: 15px; }
+.polaroid-2{ top: 220px; right: 12%; transform: rotate(4deg); }
+.polaroid-3{ bottom: 180px; left: 10%; transform: rotate(-5deg); }
+/* Cream scalloped date tag (top right) */
+.cutout-date-tag{
+    top: 30px;
+    right: 8%;
+    width: 160px;
+    padding: 18px 20px 22px;
+    border-radius: 50% 50% 50% 50% / 25% 25% 25% 25%;
+    background: var(--cream);
+    box-shadow: 0 4px 18px rgba(0,0,0,0.1);
+    border: 1px solid rgba(0,0,0,0.06);
+}
+.cutout-date-line{
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 15px;
+    letter-spacing: 2px;
+    margin: 0 0 6px 0;
+    color: #1a1a1a;
+    font-weight: 600;
+}
+.cutout-place-line{
+    font-family: Georgia, serif;
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin: 0 0 4px 0;
+    color: #333;
+}
+.cutout-city-line{
+    font-family: Georgia, serif;
+    font-size: 12px;
+    margin: 0;
+    color: #555;
+}
+/* Dark green flower "Details" + doves (left center) */
+.cutout-details-flower{
+    top: 180px;
+    left: 5%;
+    width: 130px;
+    height: 150px;
+    padding: 22px 16px 18px;
+    background: var(--forest);
+    color: #fff;
+    clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+    box-shadow: 0 6px 24px rgba(22,61,36,0.4);
+}
+.cutout-details-flower:hover{ color: #fff; }
+.cutout-details-flower .cutout-details-label{
+    font-family: 'Great Vibes', cursive;
+    font-size: 28px;
+    display: block;
+    margin-bottom: 10px;
+}
+.doves-icon{
+    display: block;
+    width: 44px;
+    height: 24px;
+    margin: 6px 0 10px 0;
+    color: rgba(255,255,255,0.95);
+}
+.doves-icon svg{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.cutout-details-flower .cutout-details-cta{
+    font-family: Georgia, serif;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    opacity: 0.95;
+}
+/* Cake stand: cream pedestal + green ribbon + seal on top */
+.cutout-cake-stand{
+    top: 200px;
+    right: 8%;
+    width: 100px;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+    align-items: center;
+}
+.cake-stand-top{
+    width: 90px;
+    height: 28px;
+    background: var(--cream);
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 4px;
+    position: relative;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.cake-stand-seal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--forest);
+    color: rgba(255,255,255,0.95);
+    font-family: 'Great Vibes', cursive;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+    border: 2px solid rgba(0,0,0,0.15);
+}
+.cake-stand-stem{
+    width: 24px;
+    height: 50px;
+    margin: 0 auto;
+    background: linear-gradient(90deg, var(--cream-dark) 0%, var(--cream) 50%, var(--cream-dark) 100%);
+    border: 1px solid rgba(0,0,0,0.06);
+    border-top: none;
+    position: relative;
+}
+.cake-stand-stem::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 18px;
+    background: var(--forest);
+    border-radius: 0 0 25px 25px;
+    z-index: -1;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.cake-stand-base{
+    width: 70px;
+    height: 12px;
+    background: var(--cream);
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 2px;
+    margin-top: -1px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+/* Cream envelope "Kindly Rsvp" (mid left) */
+.cutout-rsvp-envelope{
+    top: 340px;
+    left: 8%;
+    width: 120px;
+    padding: 20px 14px 18px;
+    background: var(--cream);
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 4px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.1);
+}
+.cutout-rsvp-envelope::before{
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
-    background-image: 
-        repeating-linear-gradient(
-            0deg,
-            transparent,
-            transparent 2px,
-            rgba(0, 0, 0, 0.02) 2px,
-            rgba(0, 0, 0, 0.02) 4px
-        );
-    pointer-events: none;
-    border-radius: 2px;
+    height: 28px;
+    background: var(--cream-dark);
+    border-radius: 4px 4px 0 0;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
 }
-.invitation-header{
-    margin-bottom: 50px;
+.cutout-rsvp-text{
+    font-family: 'Great Vibes', cursive;
+    font-size: 24px;
+    display: block;
+    margin-bottom: 10px;
+    margin-top: 8px;
+}
+.cutout-rsvp-cta{
+    font-family: Georgia, serif;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    color: #555;
+}
+/* Dark green arched "Our Story" (bottom right) */
+.cutout-our-story{
+    bottom: 80px;
+    right: 6%;
+    width: 140px;
+    height: 120px;
+    padding: 28px 18px 20px;
+    background: var(--forest);
+    color: #fff;
+    clip-path: polygon(0% 15%, 100% 0%, 100% 85%, 0% 100%);
+    box-shadow: 0 6px 24px rgba(22,61,36,0.4);
+}
+.cutout-our-story:hover{ color: #fff; }
+.cutout-our-story::before{
+    content: "";
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: 50px;
+    height: 50px;
+    background: radial-gradient(circle at 100% 0%, rgba(255,255,255,0.25) 0%, transparent 70%);
+    border-radius: 0 0 0 100%;
+    pointer-events: none;
+}
+.cutout-our-story-label{
+    font-family: 'Great Vibes', cursive;
+    font-size: 28px;
+    display: block;
+    margin-bottom: 8px;
+}
+.cutout-our-story-cta{
+    font-family: Georgia, serif;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    opacity: 0.95;
+}
+/* Registry (small, bottom center) */
+.cutout-registry{
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    padding: 10px 16px;
+    background: var(--cream);
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 4px;
+    font-family: Georgia, serif;
+    font-size: 11px;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+.cutout-registry:hover{
+    transform: translateX(-50%) translateY(-2px);
+    color: #1a1a1a;
 }
 .decorative-line-full{
     width: 100px;
     height: 1px;
-    background-color: #d4a574;
+    background-color: rgba(0,0,0,0.15);
     margin: 20px auto;
 }
 .top-decorative{
@@ -221,7 +504,7 @@
     letter-spacing: 4px;
     margin: 25px 0;
     color: #1a1a1a;
-    font-family: 'Georgia', serif;
+    font-family: 'Great Vibes', cursive;
     line-height: 1.6;
 }
 .full-couple-names br{
@@ -283,9 +566,39 @@
     font-weight: 300;
 }
 .invitation-footer{
-    margin-top: 60px;
-    padding-top: 40px;
-    border-top: 1px solid rgba(212, 165, 116, 0.3);
+    margin-top: 40px;
+    padding-top: 0;
+}
+.details-btn{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 50% 50% 50% 50% / 45% 45% 55% 55%;
+    background-color: #1e5631;
+    color: #ffffff;
+    text-decoration: none;
+    margin-bottom: 28px;
+    box-shadow: 0 4px 12px rgba(30, 86, 49, 0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.details-btn:hover{
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(30, 86, 49, 0.4);
+}
+.details-label{
+    font-family: 'Great Vibes', cursive;
+    font-size: 24px;
+    display: block;
+    margin-bottom: 4px;
+}
+.details-cta{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 9px;
+    letter-spacing: 1px;
+    opacity: 0.95;
 }
 .rsvp-line{
     font-size: 16px;
@@ -314,7 +627,7 @@
     letter-spacing: 2px;
     margin: 0 0 30px 0;
     color: #2c2c2c;
-    font-family: 'Georgia', serif;
+    font-family: 'Great Vibes', cursive;
 }
 .schedule-item{
     display: flex;
@@ -361,7 +674,7 @@
     text-transform: uppercase;
     border-radius: 2px;
     transition: all 0.3s ease;
-    font-family: 'Georgia', serif;
+    font-family: 'Great Vibes', cursive;
     text-align: center;
     border: 1px solid #d4a574;
     color: #2c2c2c;
@@ -426,7 +739,8 @@ html, body{
     overflow-x: hidden;
 }
 body{
-    background-color: #e8d5f2;
+    font-family: 'Great Vibes', cursive;
+    background-color: #ffffff;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -440,7 +754,7 @@ body{
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #e8d5f2;
+    background-color: #ffffff;
     z-index: 2000;
     display: flex;
     justify-content: center;
@@ -448,14 +762,14 @@ body{
     transition: opacity 0.3s ease;
 }
 .language-selector-content{
-    background-color: #fefefe;
+    background-color: #faf8f5;
     padding: 60px 50px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.06);
     border-radius: 4px;
     text-align: center;
     max-width: 500px;
     width: 90%;
-    font-family: 'Georgia', 'Times New Roman', serif;
+    font-family: 'Great Vibes', cursive;
 }
 .lang-decorative-top{
     margin-bottom: 30px;
@@ -469,7 +783,7 @@ body{
     letter-spacing: 2px;
     color: #2c2c2c;
     margin: 0 0 40px 0;
-    font-family: 'Georgia', serif;
+    font-family: 'Great Vibes', cursive;
     line-height: 1.4;
 }
 .language-buttons{
@@ -485,20 +799,20 @@ body{
     font-weight: 400;
     letter-spacing: 2px;
     text-transform: none;
-    border: 2px solid #d4a574;
+    border: 2px solid #1a1a1a;
     background-color: transparent;
-    color: #2c2c2c;
+    color: #1a1a1a;
     border-radius: 2px;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-family: 'Georgia', serif;
+    font-family: 'Great Vibes', cursive;
     width: 100%;
 }
 .lang-btn:hover{
-    background-color: #d4a574;
-    color: #ffffff;
+    background-color: #1a1a1a;
+    color: #f5f0e8;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(212, 165, 116, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 .lang-btn:active{
     transform: translateY(0);
@@ -507,7 +821,57 @@ body{
     opacity: 0;
     transition: opacity 0.5s ease;
 }
+.main-content-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.mail-from-intro{
+    text-align: center;
+    margin-bottom: 24px;
+    transition: opacity 0.4s ease;
+}
+.mail-from-intro.fade-out{
+    opacity: 0;
+    pointer-events: none;
+}
+.mail-from-line{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: #1a1a1a;
+    margin: 0 0 12px 0;
+    font-weight: 400;
+}
+.mail-from-names{
+    font-family: 'Great Vibes', cursive;
+    font-size: 72px;
+    color: #1a1a1a;
+    margin: 0;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.rsvp-deadline{
+    text-align: center;
+    margin-top: 32px;
+    margin-bottom: 0;
+    transition: opacity 0.4s ease;
+}
+.rsvp-deadline.fade-out{
+    opacity: 0;
+    pointer-events: none;
+}
+.rsvp-deadline span{
+    font-family: 'Great Vibes', cursive;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: #1a1a1a;
+    text-decoration: underline;
+}
 .evnelope-wrapper{
+    position: relative;
     min-height: 380px;
     display: flex;
     justify-content: center;
@@ -518,6 +882,31 @@ body{
     overflow: visible;
     min-width: 280px;
     touch-action: manipulation;
+}
+.envelope-leaf{
+    position: absolute;
+    bottom: 80px;
+    right: calc(50% - 100px);
+    width: 24px;
+    height: 40px;
+    background: linear-gradient(135deg, transparent 45%, #2d5a27 45%, #2d5a27 55%, transparent 55%);
+    border-radius: 0 12px 12px 0;
+    transform: rotate(-25deg);
+    opacity: 0.5;
+    z-index: 1;
+    pointer-events: none;
+}
+.envelope-leaf::before{
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: -6px;
+    width: 12px;
+    height: 20px;
+    border-left: 2px solid #2d5a27;
+    border-bottom: 2px solid #2d5a27;
+    border-radius: 0 0 0 8px;
+    opacity: 0.5;
 }
 .click-prompt{
     position: fixed;
@@ -530,13 +919,12 @@ body{
     transition: opacity 0.3s ease;
 }
     .click-prompt p{
-    color: #6b2c91;
-    font-size: 16px;
+    color: #1a1a1a;
+    font-size: 12px;
     font-weight: 400;
     letter-spacing: 2px;
-    font-family: 'Georgia', serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     margin: 0;
-    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.8);
     animation: pulse 2s ease-in-out infinite;
 }
 @media (max-width: 480px) {
@@ -610,6 +998,21 @@ body{
     .language-buttons{
         gap: 15px;
     }
+    .mail-from-line{
+        font-size: 12px;
+        letter-spacing: 2px;
+    }
+    .mail-from-names{
+        font-size: 58px;
+    }
+    .wax-seal{
+        top: 34px;
+        width: 38px;
+        height: 38px;
+    }
+    .wax-seal-initials{
+        font-size: 9px;
+    }
     #evnelope{
         width: 240px;
         height: 154px;
@@ -618,12 +1021,12 @@ body{
         border-left: 120px solid transparent;
         border-right: 120px solid transparent;
         border-bottom: 70px solid transparent;
-        border-top: 84px solid #6b2c91;
+        border-top: 84px solid #d8d4ce;
     }
     .pocket{
-        border-left: 120px solid #8b4da8;
-        border-right: 120px solid #8b4da8;
-        border-bottom: 77px solid #7a3d96;
+        border-left: 120px solid #d0ccc6;
+        border-right: 120px solid #d0ccc6;
+        border-bottom: 77px solid #c8c4be;
         border-top: 77px solid transparent;
     }
     .letter-out .letter{
@@ -648,6 +1051,26 @@ body{
     .full-invitation{
         padding-top: 15px;
     }
+    .invitation-collage{
+        min-height: 680px;
+        max-width: 480px;
+    }
+    .polaroid-photo{ width: 88px; height: 88px; }
+    .polaroid-1{ top: 16px; left: 10px; }
+    .polaroid-2{ top: 200px; }
+    .polaroid-3{ bottom: 160px; left: 6%; }
+    .cutout-date-tag{ top: 24px; right: 4%; width: 145px; padding: 14px 16px 18px; }
+    .cutout-date-line{ font-size: 14px; }
+    .cutout-details-flower{ top: 165px; left: 2%; width: 118px; height: 138px; padding: 20px 14px 16px; }
+    .cutout-details-flower .cutout-details-label{ font-size: 26px; }
+    .cutout-cake-stand{ top: 185px; right: 4%; }
+    .cake-stand-top{ width: 82px; height: 24px; }
+    .cake-stand-seal{ width: 28px; height: 28px; font-size: 11px; }
+    .cutout-rsvp-envelope{ top: 320px; left: 4%; width: 108px; padding: 18px 12px 14px; }
+    .cutout-rsvp-text{ font-size: 22px; }
+    .cutout-our-story{ bottom: 70px; right: 2%; width: 128px; height: 108px; padding: 24px 14px 16px; }
+    .cutout-our-story-label{ font-size: 26px; }
+    .cutout-registry{ bottom: 24px; width: 110px; padding: 8px 14px; font-size: 10px; }
     .invitation-paper{
         padding: 60px 40px;
     }
@@ -703,6 +1126,24 @@ body{
 }
 
 @media (max-width: 480px) {
+    .mail-from-intro{
+        margin-bottom: 18px;
+    }
+    .mail-from-line{
+        font-size: 11px;
+        letter-spacing: 1.5px;
+    }
+    .mail-from-names{
+        font-size: 48px;
+    }
+    .wax-seal{
+        top: 28px;
+        width: 32px;
+        height: 32px;
+    }
+    .wax-seal-initials{
+        font-size: 8px;
+    }
     #evnelope{
         width: 200px;
         height: 129px;
@@ -711,12 +1152,12 @@ body{
         border-left: 100px solid transparent;
         border-right: 100px solid transparent;
         border-bottom: 59px solid transparent;
-        border-top: 70px solid #6b2c91;
+        border-top: 70px solid #d8d4ce;
     }
     .pocket{
-        border-left: 100px solid #8b4da8;
-        border-right: 100px solid #8b4da8;
-        border-bottom: 64px solid #7a3d96;
+        border-left: 100px solid #d0ccc6;
+        border-right: 100px solid #d0ccc6;
+        border-bottom: 64px solid #c8c4be;
         border-top: 64px solid transparent;
     }
     .letter-out .letter{
@@ -755,6 +1196,31 @@ body{
     .full-invitation{
         padding-top: 10px;
     }
+    .invitation-collage{
+        min-height: 720px;
+        max-width: 100%;
+    }
+    .polaroid{ padding: 8px 8px 28px 8px; }
+    .polaroid-photo{ width: 82px; height: 82px; }
+    .polaroid-1{ top: 12px; left: 6px; }
+    .polaroid-2{ top: 185px; right: 8%; }
+    .polaroid-3{ bottom: 150px; left: 4%; }
+    .cutout-date-tag{ top: 20px; right: 2%; width: 132px; padding: 12px 14px 16px; }
+    .cutout-date-line{ font-size: 13px; }
+    .cutout-place-line{ font-size: 12px; }
+    .cutout-city-line{ font-size: 11px; }
+    .cutout-details-flower{ top: 152px; left: 0; width: 108px; height: 128px; padding: 18px 12px 14px; }
+    .cutout-details-flower .cutout-details-label{ font-size: 24px; }
+    .doves-icon{ width: 38px; height: 20px; margin: 4px 0 8px 0; }
+    .cutout-cake-stand{ top: 172px; right: 2%; }
+    .cake-stand-top{ width: 74px; height: 22px; }
+    .cake-stand-seal{ width: 26px; height: 26px; font-size: 10px; }
+    .cake-stand-stem{ height: 44px; }
+    .cutout-rsvp-envelope{ top: 300px; left: 2%; width: 98px; padding: 16px 10px 12px; }
+    .cutout-rsvp-text{ font-size: 20px; }
+    .cutout-our-story{ bottom: 60px; right: 0; width: 116px; height: 98px; padding: 22px 12px 14px; }
+    .cutout-our-story-label{ font-size: 24px; }
+    .cutout-registry{ bottom: 18px; width: 100px; padding: 6px 12px; font-size: 9px; }
     .invitation-paper{
         padding: 50px 25px;
         margin: 0;

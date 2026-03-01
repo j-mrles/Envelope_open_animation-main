@@ -3,11 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Javier & Rosita — Wedding Invitation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="language-selector" id="languageSelector">
+
+    <!-- ==================== PAGE 1: LANGUAGE SELECTION ==================== -->
+    <section id="languageSelector" class="page language-selector" aria-label="Choose language">
         <div class="language-selector-content">
             <div class="decorative-line-full lang-decorative-top"></div>
             <h2 class="language-title">Select Language / Seleccionar Idioma</h2>
@@ -17,103 +22,106 @@
             </div>
             <div class="decorative-line-full lang-decorative-bottom"></div>
         </div>
-    </div>
-    
-    <div class="evnelope-wrapper" id="mainContent" style="display: none;">
-        <div id="evnelope" class="close">
-        <div class="front flap"></div>
-        <div class="front pocket"></div>
+    </section>
 
-        <div class="letter">
-            <div class="invitation-content">
-                <div class="decorative-line top-line"></div>
-                <h1 class="couple-names">Javier & Rosita</h1>
-                <div class="invitation-text">
-                    <p class="invitation-line" data-en="Together with their families" data-es="Junto con sus familias"></p>
-                    <p class="invitation-line" data-en="request the pleasure of your company" data-es="tienen el honor de invitarle"></p>
-                    <p class="invitation-line" data-en="at their wedding celebration" data-es="a la celebración de su boda"></p>
-                </div>
-                <div class="wedding-date">
-                    <p class="date-line" data-en="Wednesday, April 24th, 2026" data-es="Miércoles, 24 de Abril, 2026"></p>
-                    <p class="time-line" data-en="Five o'clock in the afternoon" data-es="A las cinco de la tarde"></p>
-                </div>
-                <div class="wedding-location">
-                    <p class="venue-name" data-en="At the Pacheco's Residence" data-es="En la Residencia de los Pacheco"></p>
-                    <p class="venue-address">2300 Mebane Oaks Rd</p>
-                    <p class="venue-city">Mebane, NC</p>
-                </div>
-                <div class="decorative-line bottom-line"></div>
-            </div>
-        </div>
-    </div>
-    </div>
+    <!-- ==================== PAGE 2: ENVELOPE VIEW ==================== -->
+    <section id="mainContent" class="page main-content-wrapper" style="display: none;" aria-label="Invitation envelope">
+        <header class="mail-from-intro" id="mailFromIntro">
+            <p class="mail-from-line" data-en="YOU HAVE MAIL FROM" data-es="TIENES CORREO DE"></p>
+            <p class="mail-from-names" data-en="Javier and Rosita" data-es="Javier y Rosita">Javier and Rosita</p>
+        </header>
 
-    
-    <div class="white-overlay" id="whiteOverlay">
-        <div class="full-invitation" id="fullInvitation">
-            <div class="invitation-paper">
-                <div class="invitation-header">
-                    <div class="decorative-line-full top-decorative"></div>
-                    <h1 class="full-couple-names">Javier Morales<br>&<br>Rosita Pacheco</h1>
-                    <div class="decorative-line-full bottom-decorative"></div>
-                </div>
-                
-                <div class="invitation-body">
-                    <p class="full-invitation-line" data-en="Together with their families" data-es="Junto con sus familias"></p>
-                    <p class="full-invitation-line" data-en="request the pleasure of your company" data-es="tienen el honor de invitarle"></p>
-                    <p class="full-invitation-line" data-en="at their wedding celebration" data-es="a la celebración de su boda"></p>
-                </div>
-                
-                <div class="full-wedding-date">
-                    <p class="full-date-line" data-en="Wednesday, April 24th, 2026" data-es="Miércoles, 24 de Abril, 2026"></p>
-                    <p class="full-time-line" data-en="Five o'clock in the afternoon" data-es="A las cinco de la tarde"></p>
-                </div>
-                
-                <div class="full-wedding-location">
-                    <p class="full-venue-name" data-en="At the Pacheco's Residence" data-es="En la Residencia de los Pacheco"></p>
-                    <p class="full-venue-address">2300 Mebane Oaks Rd</p>
-                    <p class="full-venue-city">Mebane, NC</p>
-                </div>
-                
-                <div class="wedding-schedule">
-                    <div class="decorative-line-full schedule-decorative"></div>
-                    <h2 class="schedule-title" data-en="What to Expect" data-es="Qué Esperar"></h2>
-                    <div class="schedule-item">
-                        <p class="schedule-time">5:00 PM</p>
-                        <p class="schedule-event" data-en="Introductions" data-es="Introducciones"></p>
-                    </div>
-                    <div class="schedule-item">
-                        <p class="schedule-time">5:30 PM</p>
-                        <p class="schedule-event" data-en="Family & friends gathering" data-es="Reunión de familia y amigos"></p>
-                    </div>
-                    <div class="schedule-item">
-                        <p class="schedule-time">6:30 PM</p>
-                        <p class="schedule-event" data-en="Formal dinner" data-es="Cena formal"></p>
-                    </div>
-                    <div class="schedule-item">
-                        <p class="schedule-time">8:00 PM</p>
-                        <p class="schedule-event" data-en="First dance" data-es="Primer baile"></p>
-                    </div>
-                    <div class="schedule-item">
-                        <p class="schedule-time">9:00 PM</p>
-                        <p class="schedule-event" data-en="Celebration continues" data-es="La celebración continúa"></p>
-                    </div>
-                </div>
-                
-                <div class="invitation-footer">
-                    <div class="decorative-line-full footer-decorative"></div>
-                    <p class="rsvp-line" data-en="Kindly reply by April 1st, 2026" data-es="Favor de confirmar antes del 1 de Abril, 2026"></p>
-                    <div class="invitation-buttons">
-                        <a href="#" class="invitation-btn registry-btn" id="registryBtn" target="_blank" data-en="View Registry" data-es="Ver Lista de Regalos"></a>
-                        <a href="#" class="invitation-btn rsvp-btn" id="rsvpBtn" target="_blank" data-en="RSVP & Add Plus One" data-es="Confirmar Asistencia y Acompañante"></a>
+        <div class="evnelope-wrapper">
+            <div class="envelope-leaf" aria-hidden="true"></div>
+            <div id="evnelope" class="close">
+                <div class="front flap"></div>
+                <div class="front pocket"></div>
+                <div class="wax-seal"><span class="wax-seal-initials">J & R</span></div>
+                <div class="letter">
+                    <div class="invitation-content">
+                        <div class="decorative-line top-line"></div>
+                        <h1 class="couple-names">Javier & Rosita</h1>
+                        <div class="invitation-text">
+                            <p class="invitation-line" data-en="Together with their families" data-es="Junto con sus familias"></p>
+                            <p class="invitation-line" data-en="request the pleasure of your company" data-es="tienen el honor de invitarle"></p>
+                            <p class="invitation-line" data-en="at their wedding celebration" data-es="a la celebración de su boda"></p>
+                        </div>
+                        <div class="wedding-date">
+                            <p class="date-line" data-en="Wednesday, April 24th, 2026" data-es="Miércoles, 24 de Abril, 2026"></p>
+                            <p class="time-line" data-en="Five o'clock in the afternoon" data-es="A las cinco de la tarde"></p>
+                        </div>
+                        <div class="wedding-location">
+                            <p class="venue-name" data-en="At the Pacheco's Residence" data-es="En la Residencia de los Pacheco"></p>
+                            <p class="venue-address">2300 Mebane Oaks Rd</p>
+                            <p class="venue-city">Mebane, NC</p>
+                        </div>
+                        <div class="decorative-line bottom-line"></div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    
-    <div class="click-prompt" id="clickPrompt">
-        <p data-en="Click to open" data-es="Haz clic para abrir"></p>
+
+        <p class="rsvp-deadline" id="rsvpDeadline">
+            <span data-en="PLEASE RSVP ON OR BEFORE MARCH 24, 2026." data-es="FAVOR DE CONFIRMAR ANTES DEL 24 DE MARZO, 2026."></span>
+        </p>
+    </section>
+
+    <!-- ==================== PAGE 3: FULL INVITATION (OVERLAY) ==================== -->
+    <section id="whiteOverlay" class="page white-overlay" aria-label="Full invitation">
+        <div class="invitation-collage ref-style">
+            <!-- Top left: Polaroid placeholder -->
+            <div class="polaroid polaroid-1">
+                <div class="polaroid-photo"></div>
+            </div>
+            <!-- Top right: Cream scalloped date/location tag -->
+            <div class="cutout cutout-date-tag">
+                <p class="cutout-date-line">24 APRIL 2026</p>
+                <p class="cutout-place-line">PACHECO'S RESIDENCE</p>
+                <p class="cutout-city-line">MEBANE, NC</p>
+            </div>
+            <!-- Left center: Dark green flower "Details" + doves + CLICK HERE -->
+            <a href="#" class="cutout cutout-details-flower" id="detailsBtn">
+                <span class="cutout-details-label" data-en="Details" data-es="Detalles"></span>
+                <span class="doves-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M10 18c-3-2-5-5-5-9 0-3 2-5 4-5 2 0 3 2 3 5 0 2 2 4 4 4"/><path d="M34 18c3-2 5-5 5-9 0-3-2-5-4-5-2 0-3 2-3 5 0 2-2 4-4 4"/><path d="M16 14c3 2 10 2 14 0"/></svg></span>
+                <span class="cutout-details-cta" data-en="CLICK HERE" data-es="HAZ CLIC AQUÍ"></span>
+            </a>
+            <!-- Right center: Cream cake stand with green ribbon + seal on top -->
+            <div class="cutout cutout-cake-stand">
+                <div class="cake-stand-top">
+                    <div class="cake-stand-seal">J & R</div>
+                </div>
+                <div class="cake-stand-stem"></div>
+                <div class="cake-stand-base"></div>
+            </div>
+            <!-- Mid left: Cream envelope "Kindly Rsvp" + CLICK HERE -->
+            <a href="#" class="cutout cutout-rsvp-envelope" id="rsvpBtn" target="_blank">
+                <span class="cutout-rsvp-text" data-en="Kindly Rsvp" data-es="Favor de confirmar"></span>
+                <span class="cutout-rsvp-cta" data-en="CLICK HERE" data-es="HAZ CLIC AQUÍ"></span>
+            </a>
+            <!-- Mid right: Polaroid toasting glasses -->
+            <div class="polaroid polaroid-2">
+                <div class="polaroid-photo polaroid-wine"></div>
+            </div>
+            <!-- Bottom left: Polaroid couple -->
+            <div class="polaroid polaroid-3" style="left: 122px; top: 327px;">
+                <div class="polaroid-photo"></div>
+            </div>
+            <!-- Bottom right: Dark green arched "Our Story" with florals -->
+            <a href="#" class="cutout cutout-our-story">
+                <span class="cutout-our-story-label" data-en="Our Story" data-es="Nuestra Historia"></span>
+                <span class="cutout-our-story-cta" data-en="CLICK HERE" data-es="HAZ CLIC AQUÍ"></span>
+            </a>
+            <!-- Registry link (subtle) -->
+            <a href="#" class="cutout cutout-registry" id="registryBtn" target="_blank">
+                <span data-en="View Registry" data-es="Ver Lista de Regalos"></span>
+            </a>
+        </div>
+        <div class="full-invitation" id="fullInvitation"></div>
+    </section>
+
+    <!-- ==================== GLOBAL UI: CLICK PROMPT ==================== -->
+    <div class="click-prompt" id="clickPrompt" role="status" aria-live="polite">
+        <p data-en="CLICK ENVELOPE TO OPEN" data-es="HAZ CLIC EN EL SOBRE PARA ABRIR"></p>
     </div>
 
     <script src="script.js"></script>

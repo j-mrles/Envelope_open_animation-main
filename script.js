@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", function(){
     const whiteOverlay = document.getElementById("whiteOverlay");
     const fullInvitation = document.getElementById("fullInvitation");
     const clickPrompt = document.getElementById("clickPrompt");
+    const mailFromIntro = document.getElementById("mailFromIntro");
+    const rsvpDeadline = document.getElementById("rsvpDeadline");
     let currentLang = 'en';
     let openClickCount = 0;
 
@@ -45,12 +47,18 @@ document.addEventListener("DOMContentLoaded", function(){
     });
 
     function openEnvelope(){
-        // Hide prompt on first click
+        // Hide prompt and mail intro on first click
         if (openClickCount === 0) {
             clickPrompt.style.opacity = '0';
             setTimeout(function() {
                 clickPrompt.style.display = 'none';
             }, 300);
+            if (mailFromIntro) {
+                mailFromIntro.classList.add("fade-out");
+            }
+            if (rsvpDeadline) {
+                rsvpDeadline.classList.add("fade-out");
+            }
         }
         
         openClickCount++;
