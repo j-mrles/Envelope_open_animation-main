@@ -121,10 +121,10 @@
     margin-bottom: 0;
 }
 .couple-names{
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 400;
-    letter-spacing: 3px;
-    margin: 12px 0;
+    letter-spacing: 1.5px;
+    margin: 10px 0;
     color: #1a1a1a;
     font-family: 'Great Vibes', cursive;
 }
@@ -133,46 +133,46 @@
     line-height: 1.8;
 }
 .invitation-line{
-    font-size: 11px;
+    font-size: 9px;
     margin: 4px 0;
     color: #555;
     letter-spacing: 0.5px;
     font-style: italic;
 }
 .wedding-date{
-    margin: 18px 0;
+    margin: 14px 0;
 }
 .date-line{
-    font-size: 14px;
+    font-size: 11px;
     font-weight: 500;
     margin: 6px 0;
     color: #2c2c2c;
     letter-spacing: 1px;
 }
 .time-line{
-    font-size: 11px;
+    font-size: 10px;
     margin: 4px 0;
     color: #666;
     font-style: italic;
 }
 .wedding-location{
-    margin: 15px 0;
+    margin: 12px 0;
 }
 .venue-name{
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 500;
     margin: 5px 0;
     color: #2c2c2c;
     letter-spacing: 0.8px;
 }
 .venue-address{
-    font-size: 10px;
+    font-size: 9px;
     margin: 3px 0;
     color: #666;
     font-style: italic;
 }
 .venue-city{
-    font-size: 10px;
+    font-size: 9px;
     margin: 3px 0;
     color: #666;
     font-style: italic;
@@ -183,6 +183,7 @@
     left: 0;
     width: 100%;
     height: 100%;
+    min-height: 100dvh;
     background-color: #ffffff;
     opacity: 0;
     z-index: 1000;
@@ -192,7 +193,12 @@
     justify-content: center;
     align-items: flex-start;
     overflow-y: auto;
-    padding: 40px 20px;
+    overflow-x: hidden;
+    padding: 20px 15px;
+    padding-top: max(20px, var(--safe-top));
+    padding-left: max(15px, var(--safe-left));
+    padding-right: max(15px, var(--safe-right));
+    padding-bottom: max(20px, var(--safe-bottom));
     box-sizing: border-box;
     -webkit-overflow-scrolling: touch;
 }
@@ -208,7 +214,7 @@
     transition: opacity 1.2s ease, transform 1.2s ease;
     pointer-events: none;
     margin: 0 auto;
-    padding-top: 20px;
+    padding-top: 10px;
 }
 .full-invitation.show{
     opacity: 1;
@@ -225,8 +231,8 @@
 .invitation-collage{
     position: relative;
     width: 100%;
-    max-width: 540px;
-    min-height: 700px;
+    max-width: 100%;
+    min-height: 720px;
     margin: 0 auto;
     font-family: 'Great Vibes', cursive;
 }
@@ -246,25 +252,29 @@
     transform: translateY(-3px);
     box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
-/* Polaroids */
+.invitation-collage .cutout:active{
+    transform: scale(0.98);
+}
+/* Polaroids — mobile base */
 .polaroid{
     position: absolute;
     background: #fff;
-    padding: 10px 10px 36px 10px;
+    padding: 8px 8px 28px 8px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.12);
     transform: rotate(-3deg);
 }
 .polaroid-photo{
-    width: 100px;
-    height: 100px;
+    width: 82px;
+    height: 82px;
     background: linear-gradient(135deg, #e8e6e4 0%, #d4d0cc 100%);
 }
 .polaroid-wine{
     background: linear-gradient(160deg, #e0ddd8 0%, #c9c5bf 100%);
 }
-.polaroid-1{ top: 20px; left: 15px; }
-.polaroid-2{ top: 220px; right: 12%; transform: rotate(4deg); }
-.polaroid-3{ bottom: 180px; left: 10%; transform: rotate(-5deg); }
+.polaroid-1{ top: 12px; left: 6px; }
+.polaroid-2{ top: 185px; right: 8%; transform: rotate(4deg); }
+/* polaroid-3 position overridden in HTML inline; responsive override below for small screens */
+.polaroid-3{ bottom: 150px; left: 4%; transform: rotate(-5deg); }
 /* Cream scalloped date tag (top right) */
 .cutout-date-tag{
     top: 30px;
