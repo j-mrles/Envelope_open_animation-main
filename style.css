@@ -1,8 +1,17 @@
-/* Flowing cursive for the whole project */
+/* ========== MOBILE-FIRST BASE (primary platform) ========== */
+:root {
+    --safe-top: env(safe-area-inset-top, 0);
+    --safe-right: env(safe-area-inset-right, 0);
+    --safe-bottom: env(safe-area-inset-bottom, 0);
+    --safe-left: env(safe-area-inset-left, 0);
+    --touch-min: 44px;
+}
+
+/* Flowing cursive for the whole project — base = mobile */
 #evnelope{
     position: relative;
-    width: 280px;
-    height: 180px;
+    width: 200px;
+    height: 129px;
     max-width: 90%;
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
@@ -26,28 +35,28 @@
     z-index: 3;
 }
 .flap{
-    border-left: 140px solid transparent;
-    border-right: 140px solid transparent;
-    border-bottom: 82px solid transparent;
-    border-top: 98px solid #d8d4ce;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-bottom: 59px solid transparent;
+    border-top: 70px solid #d8d4ce;
     transform-origin: top;
     filter: drop-shadow(0 2px 4px rgba(0,0,0,0.06));
 }
 .pocket{
-    border-left: 140px solid #d0ccc6;
-    border-right: 140px solid #d0ccc6;
-    border-bottom: 90px solid #c8c4be;
-    border-top: 90px solid transparent;
+    border-left: 100px solid #d0ccc6;
+    border-right: 100px solid #d0ccc6;
+    border-bottom: 64px solid #c8c4be;
+    border-top: 64px solid transparent;
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
 }
 .wax-seal{
     position: absolute;
-    top: 42px;
+    top: 28px;
     left: 50%;
     transform: translateX(-50%);
-    width: 48px;
-    height: 48px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
     background: #ffffff;
     border: 3px solid #1a1a1a;
@@ -59,7 +68,7 @@
 }
 .wax-seal-initials{
     font-family: 'Great Vibes', cursive;
-    font-size: 18px;
+    font-size: 8px;
     font-weight: 400;
     color: #1a1a1a;
     letter-spacing: 0;
@@ -89,7 +98,7 @@
     position: relative;
     width: 100%;
     height: 100%;
-    padding: 20px 15px;
+    padding: 15px 12px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -723,7 +732,7 @@
     z-index: 2;
 }
 .letter-out .letter{
-    transform: translateY(-150px);
+    transform: translateY(-100px);
     transition: transform 1.2s ease, z-index 0.6s;
     z-index: 2;
 }
