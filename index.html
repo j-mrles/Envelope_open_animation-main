@@ -3,126 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#ffffff">
-    <title>Javier & Rosita — Wedding Invitation</title>
+    <meta name="theme-color" content="#F9F5EE">
+    <title>RSVP — Wedding Celebration</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <!-- ==================== PAGE 1: LANGUAGE SELECTION ==================== -->
-    <section id="languageSelector" class="page language-selector" aria-label="Choose language">
-        <div class="language-selector-content">
-            <div class="decorative-line-full lang-decorative-top"></div>
-            <h2 class="language-title">Select Language / Seleccionar Idioma</h2>
-            <div class="language-buttons">
-                <button class="lang-btn" data-lang="en">English</button>
-                <button class="lang-btn" data-lang="es">Español</button>
-            </div>
-            <div class="decorative-line-full lang-decorative-bottom"></div>
+    <div class="page">
+        <!-- Decorative foliage: top left -->
+        <div class="deco deco-foliage-top-left" aria-hidden="true">
+            <svg viewBox="0 0 120 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 12c2-4 8-6 14-4 5 2 10 8 12 14 1 4 0 10-3 14-4 6-12 8-18 4-5-3-7-10-5-16 2-5 8-8 14-7 6 1 11 5 12 11" fill="#7d9b76" opacity="0.85"/>
+                <path d="M22 28c3-2 8-1 11 3 2 3 2 7 0 10-2 4-6 6-10 5-4-1-7-4-8-8-1-3 0-7 3-9 4-2 9-1 12 2" fill="#8fa88a" opacity="0.75"/>
+                <path d="M18 48c4 0 8 3 9 7 1 4-1 8-5 10-4 2-9 1-12-2-3-3-4-8-2-12 2-4 6-6 11-4 15 2 4 6 6 10 5" fill="#6b8c67" opacity="0.8"/>
+                <path d="M30 62c2 3 1 7-2 9-3 2-7 2-10-1-2-3-2-7 1-9 3-2 7-1 10 2 3 2 6 2 9 0" fill="#7d9b76" opacity="0.7"/>
+            </svg>
         </div>
-    </section>
+        <!-- Decorative foliage: top right -->
+        <div class="deco deco-foliage-top-right" aria-hidden="true">
+            <svg viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M92 18c-3-2-8-1-11 2-2 3-2 7 0 10 3 3 7 4 11 2 4-2 6-6 5-10-1-4-5-6-9-5-4 1-7 4-7 8" fill="#7d9b76" opacity="0.85"/>
+                <path d="M78 35c-2 2-2 6 0 9 2 3 6 4 9 2 3-2 4-6 2-9-2-3-6-4-9-2-3 2-4 6-2 9" fill="#8fa88a" opacity="0.75"/>
+                <path d="M85 52c-3 1-6 4-6 8 0 4 3 7 7 8 4 1 8-1 10-4 2-3 1-7-2-9-3-2-7-2-10 0" fill="#6b8c67" opacity="0.8"/>
+            </svg>
+        </div>
+        <!-- Decorative foliage: bottom left (vine near champagne) -->
+        <div class="deco deco-vine-bottom-left" aria-hidden="true">
+            <svg viewBox="0 0 80 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 50c4-8 12-12 20-10 6 2 10 8 10 14 0 5-4 9-9 10-5 1-10-2-13-6" fill="#7d9b76" opacity="0.6"/>
+                <path d="M25 38c2-3 6-4 9-2 3 2 4 6 2 9-2 3-6 4-9 2" fill="#8fa88a" opacity="0.5"/>
+            </svg>
+        </div>
+        <!-- Champagne coupe line art -->
+        <div class="deco deco-champagne" aria-hidden="true">
+            <svg viewBox="0 0 50 80" fill="none" stroke="#2c2c2c" stroke-width="0.8" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg">
+                <path d="M25 8v44M12 52h26M15 52l3 20h14l3-20M22 72l3 6 3-6"/>
+                <path d="M25 20c-6 0-10 4-10 10s4 10 10 10 10-4 10-10-4-10-10-10z"/>
+                <path d="M18 52c0-4 3-8 7-8s7 4 7 8" stroke="#2c2c2c" fill="none"/>
+                <circle cx="25" cy="75" r="2" fill="none" stroke="#2c2c2c"/>
+            </svg>
+        </div>
 
-    <!-- ==================== PAGE 2: ENVELOPE VIEW ==================== -->
-    <section id="mainContent" class="page main-content-wrapper" style="display: none;" aria-label="Invitation envelope">
-        <header class="mail-from-intro" id="mailFromIntro">
-            <p class="mail-from-line" data-en="YOU HAVE MAIL FROM" data-es="TIENES CORREO DE"></p>
-            <p class="mail-from-names" data-en="Javier and Rosita" data-es="Javier y Rosita">Javier and Rosita</p>
-        </header>
+        <main class="form-wrapper">
+            <div class="form-frame">
+                <div class="form-frame-inner">
+                    <h1 class="form-title">Kindly R.S.V.P.</h1>
+                    <p class="form-subtitle">Please respond by March 24, 2026</p>
+                    <div class="form-divider"></div>
 
-        <div class="evnelope-wrapper">
-            <div class="envelope-leaf" aria-hidden="true"></div>
-            <div id="evnelope" class="close">
-                <div class="front flap"></div>
-                <div class="front pocket"></div>
-                <div class="wax-seal"><span class="wax-seal-initials">J & R</span></div>
-                <div class="letter">
-                    <div class="invitation-content">
-                        <div class="decorative-line top-line"></div>
-                        <h1 class="couple-names">Javier & Rosita</h1>
-                        <div class="invitation-text">
-                            <p class="invitation-line" data-en="Together with their families" data-es="Junto con sus familias"></p>
-                            <p class="invitation-line" data-en="request the pleasure of your company" data-es="tienen el honor de invitarle"></p>
-                            <p class="invitation-line" data-en="at their wedding celebration" data-es="a la celebración de su boda"></p>
+                    <form id="rsvpForm" class="rsvp-form" action="#" method="post" novalidate data-api="https://formspree.io/f/xqedoopl">
+                        <div class="field-group">
+                            <label for="name">Your name</label>
+                            <input type="text" id="name" name="name" placeholder="Full name" required autocomplete="name">
                         </div>
-                        <div class="wedding-date">
-                            <p class="date-line" data-en="Wednesday, April 24th, 2026" data-es="Miércoles, 24 de Abril, 2026"></p>
-                            <p class="time-line" data-en="Five o'clock in the afternoon" data-es="A las cinco de la tarde"></p>
+                        <div class="field-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="your@email.com" required autocomplete="email">
                         </div>
-                        <div class="wedding-location">
-                            <p class="venue-name" data-en="At the Pacheco's Residence" data-es="En la Residencia de los Pacheco"></p>
-                            <p class="venue-address">2300 Mebane Oaks Rd</p>
-                            <p class="venue-city">Mebane, NC</p>
+                        <div class="field-group">
+                            <label>Will you join us?</label>
+                            <div class="radio-group">
+                                <label class="radio-option">
+                                    <input type="radio" name="attending" value="yes" required>
+                                    <span class="radio-label">Joyfully accept</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="attending" value="no">
+                                    <span class="radio-label">Regretfully decline</span>
+                                </label>
+                            </div>
                         </div>
-                        <div class="decorative-line bottom-line"></div>
-                    </div>
+                        <div class="field-group field-guest" id="fieldGuest">
+                            <label>Bringing a guest?</label>
+                            <p class="field-hint">You may bring one plus one only.</p>
+                            <div class="radio-group">
+                                <label class="radio-option">
+                                    <input type="radio" name="bringing_guest" value="no" checked>
+                                    <span class="radio-label">No, just me</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="bringing_guest" value="yes">
+                                    <span class="radio-label">Yes, one guest</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="field-group field-guest-name js-guest-name" id="fieldGuestName" hidden>
+                            <label for="guest_name">Guest’s name</label>
+                            <input type="text" id="guest_name" name="guest_name" placeholder="Full name of your guest" autocomplete="off">
+                        </div>
+                        <div class="field-group">
+                            <label for="dietary">Dietary requirements or notes</label>
+                            <textarea id="dietary" name="dietary" rows="3" placeholder="Optional"></textarea>
+                        </div>
+                        <p id="formError" class="form-error hidden" role="alert"></p>
+                        <button type="submit" class="btn-submit" id="submitBtn">Send response</button>
+                    </form>
                 </div>
             </div>
+        </main>
+
+        <!-- Ornate gold flourish (subtle) -->
+        <div class="deco deco-gold-flourish" aria-hidden="true">
+            <svg viewBox="0 0 120 40" fill="none" stroke="#b8a574" stroke-width="0.6" opacity="0.7" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 20 Q30 5 60 20 T120 20"/>
+                <path d="M20 20c0-6 8-10 16-8 6 2 10 8 8 14-2 6-8 10-14 8-6-2-10-8-8-14"/>
+                <path d="M100 20c0-6-8-10-16-8-6 2-10 8-8 14 2 6 8 10 14 8 6-2 10-8 8-14"/>
+            </svg>
         </div>
+    </div>
 
-        <p class="rsvp-deadline" id="rsvpDeadline">
-            <span data-en="PLEASE RSVP ON OR BEFORE MARCH 24, 2026." data-es="FAVOR DE CONFIRMAR ANTES DEL 24 DE MARZO, 2026."></span>
-        </p>
-    </section>
-
-    <!-- ==================== PAGE 3: FULL INVITATION (OVERLAY) ==================== -->
-    <section id="whiteOverlay" class="page white-overlay" aria-label="Full invitation">
-        <div class="invitation-collage ref-style">
-            <!-- Top left: Polaroid placeholder -->
-            <div class="polaroid polaroid-1">
-                <div class="polaroid-photo"></div>
-            </div>
-            <!-- Top right: Cream scalloped date/location tag -->
-            <div class="cutout cutout-date-tag">
-                <p class="cutout-date-line">24 APRIL 2026</p>
-                <p class="cutout-place-line">PACHECO'S RESIDENCE</p>
-                <p class="cutout-city-line">MEBANE, NC</p>
-            </div>
-            <!-- Left center: Dark green flower "Details" + doves + CLICK HERE -->
-            <a href="#" class="cutout cutout-details-flower" id="detailsBtn">
-                <span class="cutout-details-label" data-en="Details" data-es="Detalles"></span>
-                <span class="doves-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M10 18c-3-2-5-5-5-9 0-3 2-5 4-5 2 0 3 2 3 5 0 2 2 4 4 4"/><path d="M34 18c3-2 5-5 5-9 0-3-2-5-4-5-2 0-3 2-3 5 0 2-2 4-4 4"/><path d="M16 14c3 2 10 2 14 0"/></svg></span>
-                <span class="cutout-details-cta" data-en="CLICK HERE" data-es="HAZ CLIC AQUÍ"></span>
-            </a>
-            <!-- Right center: Cream cake stand with green ribbon + seal on top -->
-            <div class="cutout cutout-cake-stand">
-                <div class="cake-stand-top">
-                    <div class="cake-stand-seal">J & R</div>
-                </div>
-                <div class="cake-stand-stem"></div>
-                <div class="cake-stand-base"></div>
-            </div>
-            <!-- Mid left: Cream envelope "Kindly Rsvp" + CLICK HERE -->
-            <a href="#" class="cutout cutout-rsvp-envelope" id="rsvpBtn" target="_blank">
-                <span class="cutout-rsvp-text" data-en="Kindly Rsvp" data-es="Favor de confirmar"></span>
-                <span class="cutout-rsvp-cta" data-en="CLICK HERE" data-es="HAZ CLIC AQUÍ"></span>
-            </a>
-            <!-- Mid right: Polaroid toasting glasses -->
-            <div class="polaroid polaroid-2">
-                <div class="polaroid-photo polaroid-wine"></div>
-            </div>
-            <!-- Bottom left: Polaroid couple -->
-            <div class="polaroid polaroid-3" style="left: 122px; top: 327px;">
-                <div class="polaroid-photo"></div>
-            </div>
-            <!-- Bottom right: Dark green arched "Our Story" with florals -->
-            <a href="#" class="cutout cutout-our-story">
-                <span class="cutout-our-story-label" data-en="Our Story" data-es="Nuestra Historia"></span>
-                <span class="cutout-our-story-cta" data-en="CLICK HERE" data-es="HAZ CLIC AQUÍ"></span>
-            </a>
-            <!-- Registry link (subtle) -->
-            <a href="#" class="cutout cutout-registry" id="registryBtn" target="_blank">
-                <span data-en="View Registry" data-es="Ver Lista de Regalos"></span>
-            </a>
+    <div id="thankYou" class="thank-you hidden" aria-live="polite">
+        <div class="thank-you-inner">
+            <h2 class="thank-you-title">Thank you</h2>
+            <p class="thank-you-text">We look forward to celebrating with you.</p>
         </div>
-        <div class="full-invitation" id="fullInvitation"></div>
-    </section>
-
-    <!-- ==================== GLOBAL UI: CLICK PROMPT ==================== -->
-    <div class="click-prompt" id="clickPrompt" role="status" aria-live="polite">
-        <p data-en="CLICK ENVELOPE TO OPEN" data-es="HAZ CLIC EN EL SOBRE PARA ABRIR"></p>
     </div>
 
     <script src="script.js"></script>

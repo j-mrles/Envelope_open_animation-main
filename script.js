@@ -1,100 +1,99 @@
-document.addEventListener("DOMContentLoaded", function(){
-    const languageSelector = document.getElementById("languageSelector");
-    const mainContent = document.getElementById("mainContent");
-    const envelope = document.getElementById("evnelope");
-    const whiteOverlay = document.getElementById("whiteOverlay");
-    const fullInvitation = document.getElementById("fullInvitation");
-    const clickPrompt = document.getElementById("clickPrompt");
-    const mailFromIntro = document.getElementById("mailFromIntro");
-    const rsvpDeadline = document.getElementById("rsvpDeadline");
-    let currentLang = 'en';
-    let openClickCount = 0;
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("rsvpForm");
+    const thankYou = document.getElementById("thankYou");
+    const page = document.querySelector(".page");
+    const formError = document.getElementById("formError");
+    const submitBtn = document.getElementById("submitBtn");
+    const guestNameField = document.getElementById("fieldGuestName");
+    const guestNameInput = document.getElementById("guest_name");
+    const bringingGuestRadios = form && form.querySelectorAll('input[name="bringing_guest"]');
 
-    // Language selection
-    function selectLanguage(lang) {
-        currentLang = lang;
-        updateLanguage(lang);
-        // Hide language selector and show main content
-        languageSelector.style.opacity = '0';
-        setTimeout(function() {
-            languageSelector.style.display = 'none';
-            mainContent.style.display = 'block';
-            setTimeout(function() {
-                mainContent.style.opacity = '1';
-            }, 50);
-        }, 300);
-    }
+    if (!form || !thankYou) return;
 
-    function updateLanguage(lang) {
-        const elements = document.querySelectorAll('[data-en][data-es]');
-        elements.forEach(function(element) {
-            element.textContent = element.getAttribute('data-' + lang);
-        });
-    }
-
-    // Language button handlers
-    const langButtons = document.querySelectorAll('.lang-btn');
-    langButtons.forEach(function(btn) {
-        btn.addEventListener('click', function() {
-            const lang = this.getAttribute('data-lang');
-            selectLanguage(lang);
-        });
-        btn.addEventListener('touchend', function(e) {
-            e.preventDefault();
-            const lang = this.getAttribute('data-lang');
-            selectLanguage(lang);
-        });
-    });
-
-    function openEnvelope(){
-        // Hide prompt and mail intro on first click
-        if (openClickCount === 0) {
-            clickPrompt.style.opacity = '0';
-            setTimeout(function() {
-                clickPrompt.style.display = 'none';
-            }, 300);
-            if (mailFromIntro) {
-                mailFromIntro.classList.add("fade-out");
-            }
-            if (rsvpDeadline) {
-                rsvpDeadline.classList.add("fade-out");
+    // Show/hide guest name and set required when "Yes, one guest" is selected
+    if (guestNameField && guestNameInput && bringingGuestRadios && bringingGuestRadios.length) {
+        function updateGuestField() {
+            var bringingGuest = form.querySelector('input[name="bringing_guest"]:checked');
+            if (bringingGuest && bringingGuest.value === "yes") {
+                guestNameField.hidden = false;
+                guestNameInput.required = true;
+            } else {
+                guestNameField.hidden = true;
+                guestNameInput.required = false;
+                guestNameInput.value = "";
             }
         }
-        
-        openClickCount++;
-        
-        if (openClickCount === 1) {
-            // First click: open the envelope normally
-            envelope.classList.add("open");
-            envelope.classList.remove("close");
-        } else if (openClickCount >= 2) {
-            // Subsequent clicks: slide letter all the way out
-            envelope.classList.add("letter-out");
-            // After letter slides out, fade the envelope and show white overlay
-            setTimeout(function() {
-                envelope.classList.add("fade-out");
-                whiteOverlay.classList.add("fade-in");
-                // After white overlay fades in, show the full invitation
-                setTimeout(function() {
-                    fullInvitation.classList.add("show");
-                }, 1000); // Wait for white overlay to fade in (1s)
-            }, 1200); // Wait for letter animation to complete (1.2s - slower)
+        bringingGuestRadios.forEach(function (radio) {
+            radio.addEventListener("change", updateGuestField);
+        });
+        updateGuestField();
+    }
+
+    function showError(msg) {
+        if (formError) {
+            formError.textContent = msg || "Something went wrong. Please try again.";
+            formError.classList.remove("hidden");
         }
     }
 
-    // Envelope event listeners (elements exist but are hidden until language is selected)
-    envelope.addEventListener("click", openEnvelope);
-    envelope.addEventListener("touchend", function(e) {
+    function hideError() {
+        if (formError) {
+            formError.textContent = "";
+            formError.classList.add("hidden");
+        }
+    }
+
+    form.addEventListener("submit", function (e) {
         e.preventDefault();
-        openEnvelope();
+        hideError();
+
+        var data = {
+            name: (form.name && form.name.value) ? form.name.value.trim() : "",
+            email: (form.email && form.email.value) ? form.email.value.trim() : "",
+            attending: (form.attending && form.attending.value) ? form.attending.value : "no",
+            bringing_guest: (form.bringing_guest && form.bringing_guest.value) ? form.bringing_guest.value : "no",
+            guest_name: (form.guest_name && form.guest_name.value) ? form.guest_name.value.trim() : "",
+            dietary: (form.dietary && form.dietary.value) ? form.dietary.value.trim() : ""
+        };
+
+        var apiUrl = form.getAttribute("data-api");
+        if (!apiUrl || apiUrl.indexOf("YOUR_FORM_ID") !== -1) {
+            showError("Please set your Formspree form ID in the form’s data-api attribute.");
+            return;
+        }
+        if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.textContent = "Sending…";
+        }
+
+        fetch(apiUrl, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify(data)
+        })
+            .then(function (res) {
+                return res.json().then(function (json) {
+                    if (!res.ok) throw new Error(json.error || (json.errors && json.errors[0] && json.errors[0].message) || res.statusText || "Request failed");
+                    return json;
+                }, function () {
+                    if (!res.ok) throw new Error(res.statusText || "Request failed");
+                    return {};
+                });
+            })
+            .then(function () {
+                if (page) page.classList.add("hidden");
+                thankYou.classList.remove("hidden");
+                thankYou.classList.add("visible");
+            })
+            .catch(function (err) {
+                showError(err.message || "Could not send. Check your connection and try again.");
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = "Send response";
+                }
+            });
     });
-    // Also allow clicking the wrapper
-    const wrapper = document.querySelector('.evnelope-wrapper');
-    if (wrapper) {
-        wrapper.addEventListener("click", openEnvelope);
-        wrapper.addEventListener("touchend", function(e) {
-            e.preventDefault();
-            openEnvelope();
-        });
-    }
 });
